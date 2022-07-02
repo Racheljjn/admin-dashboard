@@ -490,11 +490,7 @@ export const links = [
       {
         name: 'employees',
         icon: <IoMdContacts />,
-      },
-      {
-        name: 'customers',
-        icon: <RiContactsLine />,
-      },
+      }
     ],
   },
   {
