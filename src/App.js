@@ -8,11 +8,10 @@ import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
   Ecommerce,
   // Orders,
-  Calendar,
+  MyCalendar,
   Employees,
   Stacked,
   Pyramid,
-  Kanban,
   Line,
   Area,
   Bar,
@@ -77,9 +76,8 @@ const App =()=>{
                  <Route path="/employees" element={<Employees />} />
 
                  {/* apps  */}
-                 <Route path="/kanban" element={<Kanban />} />
                  <Route path="/editor" element={<Editor />} />
-                 <Route path="/calendar" element={<Calendar />} />
+                 <Route path="/calendar" element={<MyCalendar />} />
                  <Route path="/color-picker" element={<ColorPicker />} />
 
                  {/* charts  */}

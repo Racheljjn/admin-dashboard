@@ -1,7 +1,7 @@
 import React from 'react'
 import {Header} from '../components'
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids';
-import { ordersData, contextMenuItems, ordersGrid } from '../data/dummy';
+import { ordersData, ordersGrid } from '../data/dummy';
 
 export const Orders = () => {
   return (
@@ -18,9 +18,7 @@ export const Orders = () => {
        ))}
        </ColumnsDirective>
        <Inject services={[Resize,Sort,ContextMenu,Filter,Page,ExcelExport,Edit,PdfExport]} />
-      </GridComponent>
-     
-      
+      </GridComponent>      
     </div>
   )
 }
