@@ -11,6 +11,7 @@ import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton=({title,customFunc,icon,color,dotColor})=>{
+  
 
 
  return <TooltipComponent content={title} position="BottomCenter">
@@ -31,7 +32,7 @@ const NavButton=({title,customFunc,icon,color,dotColor})=>{
 
 
 const Navbar = () => {
- const {activeMenu,setActiveMenu,isClicked,handleClick,screenSize, setScreenSize} = useStateContext()
+ const {activeMenu,setActiveMenu,isClicked,handleClick,screenSize, setScreenSize,currentColor} = useStateContext()
  // get screen size
  useEffect(()=>{
   const handleResize=()=>{
@@ -52,10 +53,10 @@ const Navbar = () => {
   },[screenSize])
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
-     <NavButton title="menu" customFunc={()=>setActiveMenu(!activeMenu)} color="blue" icon={<AiOutlineMenu/>} />
-     <NavButton title="Cart" customFunc={()=>handleClick('cart')} color="blue" icon={<FiShoppingCart />} />
-        <NavButton title="Chat" customFunc={()=>handleClick('chat')}  dotColor="#03C9D7"  color="blue" icon={<BsChatLeft />} />
-        <NavButton title="Notification" customFunc={()=>handleClick('notification')}  dotColor="rgb(254, 201, 15)"  color="blue" icon={<RiNotification3Line />} />
+     <NavButton title="menu" customFunc={()=>setActiveMenu(!activeMenu)} color={currentColor} icon={<AiOutlineMenu/>} />
+     <NavButton title="Cart" customFunc={()=>handleClick('cart')} color={currentColor} icon={<FiShoppingCart />} />
+        <NavButton title="Chat" customFunc={()=>handleClick('chat')}  dotColor="#03C9D7"  color={currentColor} icon={<BsChatLeft />} />
+        <NavButton title="Notification" customFunc={()=>handleClick('notification')}  dotColor="rgb(254, 201, 15)"  color={currentColor} icon={<RiNotification3Line />} />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
