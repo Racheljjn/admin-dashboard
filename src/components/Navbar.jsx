@@ -7,7 +7,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg';
-import { Cart, Chat, Notification, UserProfile } from '.';
+import { Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton=({title,customFunc,icon,color,dotColor})=>{
@@ -53,9 +53,9 @@ const Navbar = () => {
   },[screenSize])
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
-     <NavButton title="menu" customFunc={()=>setActiveMenu(!activeMenu)} color={currentColor} icon={<AiOutlineMenu/>} />
-     <NavButton title="Cart" customFunc={()=>handleClick('cart')} color={currentColor} icon={<FiShoppingCart />} />
-        <NavButton title="Chat" customFunc={()=>handleClick('chat')}  dotColor="#03C9D7"  color={currentColor} icon={<BsChatLeft />} />
+  
+         <NavButton title="menu" customFunc={()=>setActiveMenu(!activeMenu)} color={currentColor} icon={<AiOutlineMenu/>} />   
+      <div className='flex'>     
         <NavButton title="Notification" customFunc={()=>handleClick('notification')}  dotColor="rgb(254, 201, 15)"  color={currentColor} icon={<RiNotification3Line />} />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
@@ -76,8 +76,7 @@ const Navbar = () => {
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>
         </TooltipComponent>
-        {isClicked.cart && <Cart/>}
-        {isClicked.chat && <Chat/>}
+         </div>
         {isClicked.notification && <Notification/>}
         {isClicked.userProfile && <UserProfile/>}
 

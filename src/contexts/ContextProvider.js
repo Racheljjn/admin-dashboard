@@ -3,7 +3,6 @@ import React, { useContext, createContext,useState } from "react";
 const StateContext = createContext()
 
 const initialState={
- chat:false,
  cart:false,
  useProfile:false,
  notification:false
