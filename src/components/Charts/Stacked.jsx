@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { stackedChartData } from '../../data/dummy';
-import { useStateContext } from '../../contexts/ContextProvider';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -62,7 +61,7 @@ export const data = {
 
 const Stacked = () => {
   return (
-    <div><Bar options={options} data={data} /></div>
+    <div><Bar options={options} data={data}/></div>
   )
 }
 

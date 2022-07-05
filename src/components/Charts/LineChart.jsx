@@ -63,9 +63,8 @@ export const data = {
 };
 const LineChart = () => {
  
-
   return (
-   <div className='w-full md:w-4/5'> <Line options={options} data={data} /></div>
+   <div> <Line options={options} data={data} /></div>
   );
 };
 

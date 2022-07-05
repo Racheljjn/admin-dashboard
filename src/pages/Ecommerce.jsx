@@ -1,11 +1,8 @@
 import React from 'react';
-import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
-import { IoIosMore } from 'react-icons/io';
-import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
 import { Stacked,  Button } from '../components';
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import { earningData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 
@@ -48,7 +45,7 @@ const ECommerce = () => {
       </div>     
     </div>
     <div className='flex gap-10 flex-wrap justify-center '>
-      <div className='bg-white dark-text-gray-200 dark:bg-secondary dark-bg m-3 p-4 rounded-2xl md-w-780'>
+      <div className='dark:bg-secondary-dark-bg  bg-white dark:text-gray-200 m-3 p-4 rounded-2xl md-w-780'>
         <div className='flex justify-between'>
           <p className='font-semibold text-xl'>Revenue Updates</p>
           <div className='flex items-center gap-4'>
@@ -81,15 +78,6 @@ const ECommerce = () => {
 
             {/* chart */}
             <div className='mt-5'>
-              {/* <SparkLine
-              currentColor={currentColor}
-              id="line-sparkline"
-              type="Line"
-              height="80px"
-              width="250px"
-              data={SparklineAreaData}
-              color={currentColor}
-              /> */}
             </div>
             <div className='mt-10'>
               <Button
