@@ -4,10 +4,9 @@ import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
-import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
+import { Stacked,  Button } from '../components';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
-import product9 from '../data/product9.jpg';
 
 
 const ECommerce = () => { 
@@ -82,7 +81,7 @@ const ECommerce = () => {
 
             {/* chart */}
             <div className='mt-5'>
-              <SparkLine
+              {/* <SparkLine
               currentColor={currentColor}
               id="line-sparkline"
               type="Line"
@@ -90,7 +89,7 @@ const ECommerce = () => {
               width="250px"
               data={SparklineAreaData}
               color={currentColor}
-              />
+              /> */}
             </div>
             <div className='mt-10'>
               <Button

@@ -7,17 +7,11 @@ import {useStateContext} from './contexts/ContextProvider'
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
   Ecommerce,
-  // Orders,
   MyCalendar,
   Employees,
   Stacked,
-  Pyramid,
   Line,
   Area,
-  Bar,
-  Pie,
-  Financial,
-  ColorMapping,
   Editor,
   Orders
 } from "./pages";
@@ -80,11 +74,6 @@ const App =()=>{
                  {/* charts  */}
                  <Route path="/line" element={<Line />} />
                  <Route path="/area" element={<Area />} />
-                 <Route path="/bar" element={<Bar />} />
-                 <Route path="/pie" element={<Pie />} />
-                 <Route path="/financial" element={<Financial />} />
-                 <Route path="/color-mapping" element={<ColorMapping />} />
-                 <Route path="/pyramid" element={<Pyramid />} />
                  <Route path="/stacked" element={<Stacked />} />
                </Routes>
              </div>

@@ -1,31 +1,69 @@
 import React from 'react';
-import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Legend, Category, StackingColumnSeries, Tooltip } from '@syncfusion/ej2-react-charts';
 
-import { stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from '../../data/dummy';
+import { stackedChartData } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-const Stacked = ({ width, height }) => {
-  const { currentMode } = useStateContext();
-
-  return (
-    <ChartComponent
-      id="charts"
-      primaryXAxis={stackedPrimaryXAxis}
-      primaryYAxis={stackedPrimaryYAxis}
-      width={width}
-      height={height}
-      chartArea={{ border: { width: 0 } }}
-      tooltip={{ enable: true }}
-      background={currentMode === 'Dark' ? '#33373E' : '#fff'}
-      legendSettings={{ background: 'white' }}
-    >
-      <Inject services={[StackingColumnSeries, Category, Legend, Tooltip]} />
-      <SeriesCollectionDirective>
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        {stackedCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} />)}
-      </SeriesCollectionDirective>
-    </ChartComponent>
-  );
+export const options = {
+  plugins: {
+    title: {
+      display: true,
+      text: 'Revenue Breakdown',
+    },
+  },
+  responsive: true,
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true,
+    },
+  },
 };
 
-export default Stacked;
+const labels =  stackedChartData[0].map((item)=>{
+  return item.x
+});
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Budget',
+      data: stackedChartData[0].map((item)=>item.y),
+      backgroundColor: 'rgb(255, 99, 132)',
+    },
+    {
+      label: 'Expense',
+      data: stackedChartData[1].map((item)=>item.y),
+      backgroundColor: 'rgb(75, 192, 192)',
+    }
+  ],
+};
+
+
+const Stacked = () => {
+  return (
+    <div><Bar options={options} data={data} /></div>
+  )
+}
+
+export default Stacked

@@ -133,7 +133,7 @@ export const barPrimaryYAxis = {
   lineStyle: { width: 0 },
   labelStyle: { color: 'transparent' },
 };
-const areaChartData = [
+export const areaChartData = [
   [
     { x: new Date(2002, 0, 1), y: 2.2 },
     { x: new Date(2003, 0, 1), y: 3.4 },
@@ -479,27 +479,6 @@ export const links = [
       {
         name: 'area',
         icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
       },
       {
         name: 'stacked',
@@ -2946,22 +2925,31 @@ export const ecomPieChartData = [
 
 export const stackedChartData = [
   [
-    { x: 'Jan', y: 111.1 },
-    { x: 'Feb', y: 127.3 },
-    { x: 'Mar', y: 143.4 },
-    { x: 'Apr', y: 159.9 },
-    { x: 'May', y: 159.9 },
-    { x: 'Jun', y: 159.9 },
-    { x: 'July', y: 159.9 },
+    { x: "Jan", y: 111.1 },
+    { x: "Feb", y: 127.3 },
+    { x: "Mar", y: 143.4 },
+    { x: "Apr", y: 159.9 },
+    { x: "May", y: 159.9 },
+    { x: "Jun", y: 159.9 },
+    { x: "July", y: 159.9 },
   ],
   [
-    { x: 'Jan', y: 111.1 },
-    { x: 'Feb', y: 127.3 },
-    { x: 'Mar', y: 143.4 },
-    { x: 'Apr', y: 159.9 },
-    { x: 'May', y: 159.9 },
-    { x: 'Jun', y: 159.9 },
-    { x: 'July', y: 159.9 },
+    { x: "Jan", y: 111.1 },
+    { x: "Feb", y: 127.3 },
+    { x: "Mar", y: 143.4 },
+    { x: "Apr", y: 159.9 },
+    { x: "May", y: 159.9 },
+    { x: "Jun", y: 159.9 },
+    { x: "July", y: 159.9 },
+  ],
+  [
+    { x: "Jan", y: 125.9 },
+    { x: "Feb", y: 133.6 },
+    { x: "Mar", y: 143.4 },
+    { x: "Apr", y: 120.8 },
+    { x: "May", y: 144.9 },
+    { x: "Jun", y: 155.9 },
+    { x: "July", y: 159.9 },
   ],
 ];
 
